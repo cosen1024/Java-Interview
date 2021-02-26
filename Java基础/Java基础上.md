@@ -73,11 +73,29 @@ Java 语言的数据类型分为两种：基本数据类型和引用数据类型
 
 <img src="http://blog-img.coolsen.cn/img/image-20210219172725756.png" alt="image-20210219172725756"  />
 
-基本数据类型包括 boolean（布尔型）、float（单精度浮点型）、char（字符型）、byte（字节型）、short（短整型）、int（整型）、long（长整型）和 double （双精度浮点型）共 8 种，如下图所示。
+1.基本数据类型包括 boolean（布尔型）、float（单精度浮点型）、char（字符型）、byte（字节型）、short（短整型）、int（整型）、long（长整型）和 double （双精度浮点型）共 8 种，如下表所示。
 
-![image-20210219170139424](http://blog-img.coolsen.cn/img/image-20210219170139424.png)
+| 基本类型 | 位数 | 字节 | 默认值  |
+| -------- | ---- | ---- | ------- |
+| int      | 32   | 4    | 0       |
+| short    | 16   | 2    | 0       |
+| long     | 64   | 8    | 0L      |
+| byte     | 8    | 1    | 0       |
+| char     | 16   | 2    | 'u0000' |
+| float    | 32   | 4    | 0f      |
+| double   | 64   | 8    | 0d      |
+| boolean  | 1    |      | false   |
 
-引用数据类型建立在基本数据类型的基础上，包括数组、类和接口。引用数据类型是由用户自定义，用来限制其他数据的类型。另外，Java 语言中不支持 [C++](http://c.biancheng.net/cplus/) 中的指针类型、结构类型、联合类型和枚举类型。
+对于 boolean，官方文档未明确定义，它依赖于 JVM 厂商的具体实现。逻辑上理解是占用 1 位，但是实际中会考虑计算机高效存储因素。
+
+Java虚拟机规范讲到：在JVM中并没有提供boolean专用的字节码指令，而boolean类型数据在经过编译后在JVM中会通过int类型来表示，此时boolean数据4字节32位，而boolean数组将会被编码成Java虚拟机的byte数组，此时每个boolean数据1字节占8bit。
+
+注意：
+
+1. Java 里使用 long 类型的数据一定要在数值后面加上 **L**，否则将作为整型解析：
+2. `char a = 'h'`char :单引号，`String a = "hello"` :双引号
+
+2.引用数据类型建立在基本数据类型的基础上，包括数组、类和接口。引用数据类型是由用户自定义，用来限制其他数据的类型。另外，Java 语言中不支持 C++中的指针类型、结构类型、联合类型和枚举类型。
 
 ### switch 是否能作用在 byte 上，是否能作用在 long 上，是否能作用在 String 上？
 
@@ -346,32 +364,40 @@ hashCode() 的作用是获取哈希码，也称为散列码；它实际上是返
 
 ### String,StringBuffer, StringBuilder 的区别是什么？
 
-1. 可变与不可变。String类中使用字符数组保存字符串，因为有“final”修饰符，所以string对象是不可变的。**对于已经存在的String对象的修改都是重新创建一个新的对象,然后把新的值保存进去.**
+1.可变与不可变。String类中使用字符数组保存字符串，因为有“final”修饰符，所以string对象是不可变的。**对于已经存在的String对象的修改都是重新创建一个新的对象,然后把新的值保存进去.**
+
+String类利用了final修饰的char类型数组存储字符，源码如下:
 
 `private final char value[];`
 
 StringBuilder与StringBuffer都继承自AbstractStringBuilder类，在AbstractStringBuilder中也是使用字符数组保存字符串，这两种对象都是可变的。
 
+源码如下:
+
 `char[] value;`
 
-2. 是否多线程安全。
+2.是否多线程安全。
 
-   String中的对象是不可变的，也就可以理解为常量，显然线程安全。
+String中的对象是不可变的，也就可以理解为常量，显然线程安全。
 
-   StringBuilder是非线程安全的。
+StringBuilder是非线程安全的。
 
-   StringBuffer对方法加了同步锁或者对调用的方法加了同步锁，所以是线程安全的。
+StringBuffer对方法加了同步锁或者对调用的方法加了同步锁，所以是线程安全的。
 
-   ```java
-       @Override
-       public synchronized StringBuffer append(String str) {
-           toStringCache = null;
-           super.append(str);
-           return this;
-       }
-   ```
+源码如下:
 
-   3. 如果你只是在单线程中使用字符串缓冲区，那么StringBuilder的效率会更高些。值得注意的是StringBuilder是在JDK1.5版本中增加的。以前版本的JDK不能使用该类。
+```java
+    @Override
+    public synchronized StringBuffer append(String str) {
+        toStringCache = null;
+        super.append(str);
+        return this;
+    }
+```
+
+3.性能
+
+每次对String 类型进行改变的时候，都会生成一个新的String对象，然后将指针指向新的String 对象。StringBuffer每次都会对StringBuffer对象本身进行操作，而不是生成新的对象并改变对象引用。相同情况下使用StirngBuilder 相比使用StringBuffer 仅能获得10%~15% 左右的性能提升，但却要冒多线程不安全的风险。
 
 ### String为什么要设计成不可变的？
 
