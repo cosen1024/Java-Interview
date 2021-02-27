@@ -1,5 +1,5 @@
 # Java-Interview
-「Java面试指南」一份通向理想互联网公司的面试指南，包括 Java基础、Java并发、JVM、MySQL、Redis、Spring、MyBatis、Kafka、操作系统、计算机网络、系统设计、分布式、Java 项目实战等
+「Java面试小抄」一份通向理想互联网公司的面试指南，包括 Java基础、Java并发、JVM、MySQL、Redis、Spring、MyBatis、Kafka、操作系统、计算机网络、系统设计、分布式、Java 项目实战等
 
 ## 关于我
 
@@ -15,8 +15,8 @@
 
 ### Java基础
 
-* [Java基础入门](https://github.com/cosen1024/Java-Interview/blob/main/Java%E5%9F%BA%E7%A1%80/Java%E5%9F%BA%E7%A1%80.md)
-
+* [Java基础上](https://github.com/cosen1024/Java-Interview/blob/main/Java%E5%9F%BA%E7%A1%80/Java%E5%9F%BA%E7%A1%80.md)
+* [Java基础下](https://github.com/cosen1024/Java-Interview/blob/main/Java%E5%9F%BA%E7%A1%80/Java%E5%9F%BA%E7%A1%80%E4%B8%8B.md)
 ### 集合
 
 * [HashMap](https://github.com/cosen1024/Java-Interview/blob/main/Java集合/HashMap.md)
