@@ -959,9 +959,213 @@ Java的序列化机制是通过在运行时判断类的serialVersionUID来验证
 
 ## 异常
 
+### Error 和 Exception 区别是什么？
+
+ Java 中，所有的异常都有一个共同的祖先 `java.lang` 包中的 `Throwable` 类。`Throwable` 类有两个重要的子类 `Exception`（异常）和 `Error`（错误）。
+
+`Exception` 和 `Error` 二者都是 Java 异常处理的重要子类，各自都包含大量子类。
+
+- **`Exception`** :程序本身可以处理的异常，可以通过 `catch` 来进行捕获，通常遇到这种错误，应对其进行处理，使应用程序可以继续正常运行。`Exception` 又可以分为运行时异常(RuntimeException, 又叫非受检查异常)和非运行时异常(又叫受检查异常) 。
+- **`Error`** ：`Error` 属于程序无法处理的错误 ，我们没办法通过 `catch` 来进行捕获 。例如，系统崩溃，内存不足，堆栈溢出等，编译器不会对这类错误进行检测，一旦这类错误发生，通常应用程序会被终止，仅靠应用程序本身无法恢复。
+
+![](http://blog-img.coolsen.cn/img/image-20210227103256234.png)
+
+### 非受检查异常(运行时异常)和受检查异常(一般异常)区别是什么？
+
+非受检查异常：包括 `RuntimeException` 类及其子类，表示 JVM 在运行期间可能出现的异常。 Java 编译器不会检查运行时异常。例如：`NullPointException(空指针)`、`NumberFormatException（字符串转换为数字）`、`IndexOutOfBoundsException(数组越界)`、`ClassCastException(类转换异常)`、`ArrayStoreException(数据存储异常，操作数组时类型不一致)`等。
+
+受检查异常：是Exception 中除 `RuntimeException` 及其子类之外的异常。 Java 编译器会检查受检查异常。常见的受检查异常有： IO 相关的异常、`ClassNotFoundException` 、`SQLException`等。
+
+**非受检查异常和受检查异常之间的区别**：是否强制要求调用者必须处理此异常，如果强制要求调用者必须进行处理，那么就使用受检查异常，否则就选择非受检查异常。
+
+### throw 和 throws 的区别是什么？
+
+Java 中的异常处理除了包括捕获异常和处理异常之外，还包括声明异常和拋出异常，可以通过 throws 关键字在方法上声明该方法要拋出的异常，或者在方法内部通过 throw 拋出异常对象。
+
+throws 关键字和 throw 关键字在使用上的几点区别如下：
+
+* throw 关键字用在方法内部，只能用于抛出一种异常，用来抛出方法或代码块中的异常，受查异常和非受查异常都可以被抛出。
+* throws 关键字用在方法声明上，可以抛出多个异常，用来标识该方法可能抛出的异常列表。一个方法用 throws 标识了可能抛出的异常列表，调用该方法的方法中必须包含可处理异常的代码，否则也要在方法签名中用 throws 关键字声明相应的异常。
+
+举例如下：
+
+**throw 关键字**：
+
+```java
+public static void main(String[] args) {
+		String s = "abc";
+		if(s.equals("abc")) {
+			throw new NumberFormatException();
+		} else {
+			System.out.println(s);
+		}
+		//function();
+}
+```
+
+**throws 关键字**：
+
+```java
+public static void function() throws NumberFormatException{
+		String s = "abc";
+		System.out.println(Double.parseDouble(s));
+	}
+	
+	public static void main(String[] args) {
+		try {
+			function();
+		} catch (NumberFormatException e) {
+			System.err.println("非数据类型不能转换。");
+			//e.printStackTrace();
+		}
+}
+```
+
+### NoClassDefFoundError 和 ClassNotFoundException 区别？
+
+NoClassDefFoundError 是一个 Error 类型的异常，是由 JVM 引起的，不应该尝试捕获这个异常。引起该异常的原因是 JVM 或 ClassLoader 尝试加载某类时在内存中找不到该类的定义，该动作发生在运行期间，即编译时该类存在，但是在运行时却找不到了，可能是变异后被删除了等原因导致。
+
+ClassNotFoundException 是一个受检查异常，需要显式地使用 try-catch 对其进行捕获和处理，或在方法签名中用 throws 关键字进行声明。当使用 Class.forName, ClassLoader.loadClass 或 ClassLoader.findSystemClass 动态加载类到内存的时候，通过传入的类路径参数没有找到该类，就会抛出该异常；另一种抛出该异常的可能原因是某个类已经由一个类加载器加载至内存中，另一个加载器又尝试去加载它。
+### Java常见异常有哪些？
+* java.lang.IllegalAccessError：违法访问错误。当一个应用试图访问、修改某个类的域（Field）或者调用其方法，但是又违反域或方法的可见性声明，则抛出该异常。
+* java.lang.InstantiationError：实例化错误。当一个应用试图通过Java的new操作符构造一个抽象类或者接口时抛出该异常.
+* java.lang.OutOfMemoryError：内存不足错误。当可用内存不足以让Java虚拟机分配给一个对象时抛出该错误。
+* java.lang.StackOverflowError：堆栈溢出错误。当一个应用递归调用的层次太深而导致堆栈溢出或者陷入死循环时抛出该错误。
+* java.lang.ClassCastException：类造型异常。假设有类A和B（A不是B的父类或子类），O是A的实例，那么当强制将O构造为类B的实例时抛出该异常。该异常经常被称为强制类型转换异常。
+* java.lang.ClassNotFoundException：找不到类异常。当应用试图根据字符串形式的类名构造类，而在遍历CLASSPAH之后找不到对应名称的class文件时，抛出该异常。
+* java.lang.ArithmeticException：算术条件异常。譬如：整数除零等。
+* java.lang.ArrayIndexOutOfBoundsException：数组索引越界异常。当对数组的索引值为负数或大于等于数组大小时抛出。
+* java.lang.IndexOutOfBoundsException：索引越界异常。当访问某个序列的索引值小于0或大于等于序列大小时，抛出该异常。
+* java.lang.InstantiationException：实例化异常。当试图通过newInstance()方法创建某个类的实例，而该类是一个抽象类或接口时，抛出该异常。
+* java.lang.NoSuchFieldException：属性不存在异常。当访问某个类的不存在的属性时抛出该异常。
+* java.lang.NoSuchMethodException：方法不存在异常。当访问某个类的不存在的方法时抛出该异常。
+* java.lang.NullPointerException：空指针异常。当应用试图在要求使用对象的地方使用了null时，抛出该异常。譬如：调用null对象的实例方法、访问null对象的属性、计算null对象的长度、使用throw语句抛出null等等。
+* java.lang.NumberFormatException：数字格式异常。当试图将一个String转换为指定的数字类型，而该字符串确不满足数字类型要求的格式时，抛出该异常。
+* java.lang.StringIndexOutOfBoundsException：字符串索引越界异常。当使用索引值访问某个字符串中的字符，而该索引值小于0或大于等于序列大小时，抛出该异常。
+
+### try-catch-finally 中哪个部分可以省略？
+
+catch 可以省略。更为严格的说法其实是：try只适合处理运行时异常，try+catch适合处理运行时异常+普通异常。也就是说，如果你只用try去处理普通异常却不加以catch处理，编译是通不过的，因为编译器硬性规定，普通异常如果选择捕获，则必须用catch显示声明以便进一步处理。而运行时异常在编译时没有如此规定，所以catch可以省略，你加上catch编译器也觉得无可厚非。
+
+理论上，编译器看任何代码都不顺眼，都觉得可能有潜在的问题，所以你即使对所有代码加上try，代码在运行期时也只不过是在正常运行的基础上加一层皮。但是你一旦对一段代码加上try，就等于显示地承诺编译器，对这段代码可能抛出的异常进行捕获而非向上抛出处理。如果是普通异常，编译器要求必须用catch捕获以便进一步处理；如果运行时异常，捕获然后丢弃并且+finally扫尾处理，或者加上catch捕获以便进一步处理。
+
+至于加上finally，则是在不管有没捕获异常，都要进行的“扫尾”处理。
+
+### try-catch-finally 中，如果 catch 中 return 了，finally 还会执行吗？
+会执行，在 return 前执行。
+
+在 finally 中改变返回值的做法是不好的，因为如果存在 finally 代码块，try中的 return 语句不会立马返回调用者，而是记录下返回值待 finally 代码块执行完毕之后再向调用者返回其值，然后如果在 finally 中修改了返回值，就会返回修改后的值。显然，在 finally 中返回或者修改返回值会对程序造成很大的困扰，Java 中也可以通过提升编译器的语法检查级别来产生警告或错误。
+**代码示例1：**
+
+```java
+public static int getInt() {
+    int a = 10;
+    try {
+        System.out.println(a / 0);
+        a = 20;
+    } catch (ArithmeticException e) {
+        a = 30;
+        return a;
+        /*
+         * return a 在程序执行到这一步的时候，这里不是return a 而是 return 30；这个返回路径就形成了
+         * 但是呢，它发现后面还有finally，所以继续执行finally的内容，a=40
+         * 再次回到以前的路径,继续走return 30，形成返回路径之后，这里的a就不是a变量了，而是常量30
+         */
+    } finally {
+        a = 40;
+    }
+	return a;
+}
+
+//执行结果：30
+```
+
+**代码示例2：**
+
+```java
+public static int getInt() {
+    int a = 10;
+    try {
+        System.out.println(a / 0);
+        a = 20;
+    } catch (ArithmeticException e) {
+        a = 30;
+        return a;
+    } finally {
+        a = 40;
+        //如果这样，就又重新形成了一条返回路径，由于只能通过1个return返回，所以这里直接返回40
+        return a; 
+    }
+
+}
+
+// 执行结果：40
+```
+
+### JVM 是如何处理异常的？
+
+在一个方法中如果发生异常，这个方法会创建一个异常对象，并转交给 JVM，该异常对象包含异常名称，异常描述以及异常发生时应用程序的状态。创建异常对象并转交给 JVM 的过程称为抛出异常。可能有一系列的方法调用，最终才进入抛出异常的方法，这一系列方法调用的有序列表叫做调用栈。
+
+JVM 会顺着调用栈去查找看是否有可以处理异常的代码，如果有，则调用异常处理代码。当 JVM 发现可以处理异常的代码时，会把发生的异常传递给它。如果 JVM 没有找到可以处理该异常的代码块，JVM 就会将该异常转交给默认的异常处理器（默认处理器为 JVM 的一部分），默认异常处理器打印出异常信息并终止应用程序。
+想要深入了解的小伙伴可以看这篇文章：https://www.cnblogs.com/qdhxhz/p/10765839.html
+
 ## IO
 
-## JDK1.8特性
+### Java的IO 流分为几种？
+
+* 按照流的方向：输入流（inputStream）和输出流（outputStream）；
+* 按照实现功能分：节点流（可以从或向一个特定的地方读写数据，如 FileReader）和处理流（是对一个已存在的流的连接和封装，通过所封装的流的功能调用实现数据读写， BufferedReader）；
+* 按照处理数据的单位： 字节流和字符流。分别由四个抽象类来表示（每种流包括输入和输出两种所以一共四个）:InputStream，OutputStream，Reader，Writer。Java中其他多种多样变化的流均是由它们派生出来的。
+
+![](http://blog-img.coolsen.cn/img/image-20210227113301593.png)
+
+### 字节流如何转为字符流？
+
+字节输入流转字符输入流通过 InputStreamReader 实现，该类的构造函数可以传入 InputStream 对象。
+
+字节输出流转字符输出流通过 OutputStreamWriter 实现，该类的构造函数可以传入 OutputStream 对象。
+
+### 字符流与字节流的区别？
+
+- 读写的时候字节流是按字节读写，字符流按字符读写。
+- 字节流适合所有类型文件的数据传输，因为计算机字节（Byte）是电脑中表示信息含义的最小单位。字符流只能够处理纯文本数据，其他类型数据不行，但是字符流处理文本要比字节流处理文本要方便。
+- 在读写文件需要对内容按行处理，比如比较特定字符，处理某一行数据的时候一般会选择字符流。
+- 只是读写文件，和文件内容无关时，一般选择字节流。
+
+### BIO、NIO、AIO的区别？
+
+- BIO：同步并阻塞，在服务器中实现的模式为**一个连接一个线程**。也就是说，客户端有连接请求的时候，服务器就需要启动一个线程进行处理，如果这个连接不做任何事情会造成不必要的线程开销，当然这也可以通过线程池机制改善。BIO**一般适用于连接数目小且固定的架构**，这种方式对于服务器资源要求比较高，而且并发局限于应用中，是JDK1.4之前的唯一选择，但好在程序直观简单，易理解。
+- NIO：同步并非阻塞，在服务器中实现的模式为**一个请求一个线程**，也就是说，客户端发送的连接请求都会注册到多路复用器上，多路复用器轮询到有连接IO请求时才会启动一个线程进行处理。**NIO一般适用于连接数目多且连接比较短（轻操作）的架构**，并发局限于应用中，编程比较复杂，从JDK1.4开始支持。
+- AIO：异步并非阻塞，在服务器中实现的模式为**一个有效请求一个线程**，也就是说，客户端的IO请求都是通过操作系统先完成之后，再通知服务器应用去启动线程进行处理。AIO一般适用于连接数目多且连接比较长（重操作）的架构，充分调用操作系统参与并发操作，编程比较复杂，从JDK1.7开始支持。
+
+### Java IO都有哪些设计模式？
+
+使用了**适配器模式**和**装饰器模式**
+
+**适配器模式**：
+
+```java
+Reader reader = new INputStreamReader(inputStream);
+```
+
+**把一个类的接口变换成客户端所期待的另一种接口，从而使原本因接口不匹配而无法在一起工作的两个类能够在一起工作**
+
+- **类适配器**：Adapter类（适配器）继承Adaptee类（源角色）实现Target接口（目标角色）
+- **对象适配器**：Adapter类（适配器）持有Adaptee类（源角色）对象实例，实现Target接口（目标角色）
+  ![](http://blog-img.coolsen.cn/img/image-20210227114919307.png)
+
+**装饰器模式**：
+
+```java
+new BufferedInputStream(new FileInputStream(inputStream));
+```
+
+**一种动态地往一个类中添加新的行为的设计模式。就功能而言，装饰器模式相比生成子类更为灵活，这样可以给某个对象而不是整个类添加一些功能。**
+
+- ConcreteComponent（具体对象）和Decorator（抽象装饰器）实现相同的Conponent（接口）并且Decorator（抽象装饰器）里面持有Conponent（接口）对象，可以传递请求。
+- ConcreteComponent（具体装饰器）覆盖Decorator（抽象装饰器）的方法并用super进行调用，传递请求。
+
+![](http://blog-img.coolsen.cn/img/image-20210227115040999.png)
 
 ## 参考
 
@@ -982,3 +1186,13 @@ https://juejin.cn/post/6844903848167866375
 https://blog.csdn.net/lanzhupi/article/details/109809836
 
 https://juejin.cn/post/6844903746682486791
+
+https://blog.csdn.net/ThinkWon/article/details/101681073
+
+https://simplesnippets.tech/exception-handling-in-java-part-1/
+
+https://www.cnblogs.com/xingyunblog/p/8688859.html
+
+https://mp.weixin.qq.com/s/p5qM2UJ1uIWyongfVpRbCg
+
+https://juejin.cn/post/6844903520856965128
