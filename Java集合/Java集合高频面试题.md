@@ -327,7 +327,7 @@ JDK1.7中的ConcurrentHashMap  是由 `Segment` 数组结构和 `HashEntry` 数�
 3. 不为空则需要新建一个 HashEntry 并加入到 Segment 中，同时会先判断是否需要扩容。
 4. 释放 Segment 的锁。
 
-**再来看JDK1.8 **
+**再来看JDK1.8**
 
 大致可以分为以下步骤：
 
@@ -484,7 +484,7 @@ public boolean add(E e) {
 
 * 场景：java.util包下的集合类都是快速失败的，不能在多线程下发生并发修改（迭代过程中被修改），比如HashMap、ArrayList 这些集合类。      
 
-**安全失败（fail—safe）  **  
+**安全失败（fail—safe）**  
 
 * 采用安全失败机制的集合容器，在遍历时不是直接在集合内容上访问的，而是先复制原有集合内容，在拷贝的集合上进行遍历。      
 
