@@ -306,7 +306,7 @@ JDK1.7中的ConcurrentHashMap  是由 `Segment` 数组结构和 `HashEntry` 数�
 
 首先将数据分为一段一段的存储，然后给每一段数据配一把锁，当一个线程占用锁访问其中一个段数据时，其他段的数据也能被其他线程访问，能够实现真正的并发访问。
 
-**再来看下JDK1.8 **
+**再来看下JDK1.8**
 
 在数据结构上， JDK1.8  中的ConcurrentHashMap  选择了与 HashMap 相同的**数组+链表+红黑树**结构；在锁的实现上，抛弃了原有的 Segment 分段锁，采用` CAS + synchronized `实现更加低粒度的锁。
 
@@ -441,7 +441,7 @@ private static class SynchronizedMap<K,V>
 
 如果传入的是 HashMap 对象，其实也是对 HashMap 做的方法做了一层包装，里面使用对象锁来保证多线程场景下，线程安全，本质也是对 HashMap 进行全表锁。**在竞争激烈的多线程环境下性能依然也非常差，不推荐使用！**
 
-##  28. HashSet 和 HashMap 区别?
+##  27. HashSet 和 HashMap 区别?
 
 ![](http://blog-img.coolsen.cn/img/image-20210403193010949.png)
 
