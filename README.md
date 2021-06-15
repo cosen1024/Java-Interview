@@ -50,4 +50,8 @@
 * [Spring](https://github.com/cosen1024/Java-Interview/blob/main/Spring/Spring.md)
 
 ## 计算机网络
-* [计算机网络第一期](https://github.com/cosen1024/Java-Interview/blob/main/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C.md)
+* [计算机网络上](https://github.com/cosen1024/Java-Interview/blob/main/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C.md)
+* [计算机网络下](https://github.com/cosen1024/Java-Interview/blob/main/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%B8%8B.md)
+
+## 操作系统
+*[操作系统](https://github.com/cosen1024/Java-Interview/blob/main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F.md)
