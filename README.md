@@ -1,9 +1,7 @@
 # Java-Interview
 「Java面试小抄」一份通向理想互联网公司的面试指南，包括 Java基础、集合、Java并发、JVM、MySQL、Redis、Spring、MyBatis、Kafka、操作系统、计算机网络、系统设计、分布式、Java 项目实战等
 
-<div>
- <br> <strong>👍推荐<a href="https://github.com/cosen1024/awesome-cs-books">免费下载几百本计算机经典 电子书</a></strong> <br>
-    </div> 
+
 
 <p align="center">
     <br>
@@ -15,7 +13,11 @@
            <a href="https://github.com/cosen1024/awesome-cs-books"><img src="https://img.shields.io/badge/PDF-免费计算机电子书籍-lightgrey.svg" alt="免费PDF"></a>
         </p>
 
-### 更多
+<div>
+ <br> <strong>👍推荐<a href="https://github.com/cosen1024/awesome-cs-books">免费下载几百本计算机经典 电子书</a></strong> <br>
+    </div> 
+
+## 更多
 <a name="download"></a>
 
 <b><details><summary> :orange_book: PDF下载方式（点击此处可下载）</summary></b>
