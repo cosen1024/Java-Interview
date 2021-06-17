@@ -36,7 +36,7 @@
 也可以直接在[Github](https://github.com/cosen1024/Java-Interview)上提交issue或pr，感谢大家的参与~
 
 另仓库中的全部知识点均来自本人学习总结、读书笔记、网络博文等。
-## 目录结构（不断更新中）
+## 🚀 目录结构（不断更新中）
 
 ### Java基础
 
