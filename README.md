@@ -1,15 +1,33 @@
 # Java-Interview
 「Java面试小抄」一份通向理想互联网公司的面试指南，包括 Java基础、集合、Java并发、JVM、MySQL、Redis、Spring、MyBatis、Kafka、操作系统、计算机网络、系统设计、分布式、Java 项目实战等
 
-## 关于我
+<div>
+ <br> <strong>👍推荐<a href="https://github.com/cosen1024/awesome-cs-books">免费下载几百本计算机经典 电子书</a></strong> <br>
+    </div> 
 
-小伙伴你好，我是库森，一路摸爬滚打到大厂的程序员一枚。我将持续输出干货，与你共同成长～
+<p align="center">
+    <br>
+    <a href="http://blog-img.coolsen.cn/img/image-20210617144435278.png"><img src="https://img.shields.io/badge/WeChat-微信交流群-blue.svg" alt="微信交流群"></a>
+<a href="http://blog-img.coolsen.cn/img/公众号.jpg"><img src="https://img.shields.io/badge/公众号-程序员库森-green.svg" alt="公众号"></a>
+  <a href="https://www.zhihu.com/people/ku-sen-1"><img src="https://img.shields.io/badge/知乎-程序员库森-informational.svg" alt="知乎"></a>
+   <a href="https://blog.csdn.net/weixin_45545542"><img src="https://img.shields.io/badge/CSDN-程序员库森-important.svg" alt="CSDN"></a>
+       <a href="https://www.nowcoder.com/profile/540390845"><img src="https://img.shields.io/badge/牛客网-程序员库森-9cf" alt="牛客网"></a>
+           <a href="https://github.com/cosen1024/awesome-cs-books"><img src="https://img.shields.io/badge/PDF-免费计算机电子书籍-lightgrey.svg" alt="免费PDF"></a>
+        </p>
 
-![公众号](http://blog-img.coolsen.cn/img/公众号.jpg)
+## 更多
+<a name="download"></a>
 
-此外，我还收集整理了700多页的Java笔记，配合面试题，效果更佳。扫描上方二维码或微信搜公众号 「**程序员库森**」，回复「**笔记**」即可领取。
+<b><details><summary> :orange_book: PDF下载方式（点击此处可下载）</summary></b>
 
-我还建立了技术和面试交流群，回复“加群”即可加入交流。
+:orange_book: PDF下载方式
+
+请扫描下方个人公众号『**程序员库森**』后，回复关键字『**pdf**』，即可下载该面试小抄的**最新 PDF 版本**。
+
+<a name="公众号"></a>
+<div align="center"><img src="http://blog-img.coolsen.cn/img/公众号.jpg" style="zoom:50%;" />
+    <p>个人公众号</p>
+</div>
 
 ## 目录结构（不断更新中）
 
@@ -55,3 +73,6 @@
 
 ## 操作系统
 * [操作系统](https://github.com/cosen1024/Java-Interview/blob/main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F.md)
+
+## 关于我
+[库森的校招经历](http://mp.weixin.qq.com/s?__biz=Mzg4MjUxMTI4NA==&mid=2247483796&idx=1&sn=bdc95819d442ac946b6e49dee6ee36de&chksm=cf54dd4ff82354594280041ce65f639a8ed3361df03da95bed743474a6075dfa973f35acc029&token=2080698617&lang=zh_CN#rd)
