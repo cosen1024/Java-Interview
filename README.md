@@ -20,7 +20,6 @@
 
 <b><details><summary> :orange_book: PDF下载方式（点击此处可下载）</summary></b>
 
-:orange_book: PDF下载方式
 
 请扫描下方个人公众号『**程序员库森**』后，回复关键字『**pdf**』，即可下载该面试小抄的**最新 PDF 版本**。
 
