@@ -15,7 +15,7 @@
            <a href="https://github.com/cosen1024/awesome-cs-books"><img src="https://img.shields.io/badge/PDF-免费计算机电子书籍-lightgrey.svg" alt="免费PDF"></a>
         </p>
 
-## 更多
+### 更多
 <a name="download"></a>
 
 <b><details><summary> :orange_book: PDF下载方式（点击此处可下载）</summary></b>
@@ -28,7 +28,13 @@
 <div align="center"><img src="http://blog-img.coolsen.cn/img/公众号.jpg" style="zoom:50%;" />
     <p>个人公众号</p>
 </div>
+</details>
 
+大家在阅读过程中，如果遇到错误的地方或者新的见解，都可以通过邮箱：cosen1024@163.com 与我交流！
+
+也可以直接在[Github](https://github.com/cosen1024/Java-Interview)上提交issue或pr，感谢大家的参与~
+
+另仓库中的全部知识点均来自本人学习总结、读书笔记、网络博文等。
 ## 目录结构（不断更新中）
 
 ### Java基础
