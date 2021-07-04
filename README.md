@@ -23,7 +23,7 @@
 <b><details><summary> :orange_book: PDF下载方式（点击此处可下载）</summary></b>
 
 
-请扫描下方个人公众号『**程序员库森**』后，回复关键字『**pdf**』，即可下载该面试小抄的**最新 PDF 版本**。
+请微信扫描或搜索下方个人公众号『**程序员库森**』后，回复关键字『**pdf**』，即可下载该面试小抄的**最新 PDF 版本**。
 
 <a name="公众号"></a>
 <div align="center"><img src="http://blog-img.coolsen.cn/img/公众号.jpg" style="zoom:50%;" />
