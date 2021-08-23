@@ -55,7 +55,8 @@
 
 ### Java并发
 
-* [Java多线程面试-基础](https://github.com/cosen1024/Java-Interview/blob/main/Java并发/Java多线程面试-基础.md)
+* [Java多线程面试-总结版](https://github.com/cosen1024/Java-Interview/blob/main/Java%E5%B9%B6%E5%8F%91/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%80%BB%E7%BB%93%E7%89%88.md)
+
 * [进程通信和线程通信的方式](https://github.com/cosen1024/Java-Interview/blob/main/Java并发/进程通信和线程通信的方式.md)
 
 * [如何设计线程池](https://github.com/cosen1024/Java-Interview/blob/main/Java并发/如何设计线程池.md)
@@ -63,6 +64,7 @@
 * [AQS原理](https://github.com/cosen1024/Java-Interview/blob/main/Java并发/AQS.md)
 
 ### MySQL
+* [MySQL基础、锁、事务、分库分表、优化](https://github.com/cosen1024/Java-Interview/blob/main/MySQL/MySQL%E5%9F%BA%E7%A1%80%E3%80%81%E9%94%81%E3%80%81%E4%BA%8B%E5%8A%A1%E3%80%81%E5%88%86%E5%BA%93%E5%88%86%E8%A1%A8%E3%80%81%E4%BC%98%E5%8C%96.md)
 
 * [MySQL基础](https://github.com/cosen1024/Java-Interview/blob/main/MySQL/MySQL.md)
 
