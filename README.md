@@ -40,7 +40,7 @@
 
 ### Java基础
 
-* [Java基础上](https://github.com/cosen1024/Java-Interview/blob/main/Java%E5%9F%BA%E7%A1%80/Java%E5%9F%BA%E7%A1%80.md)
+* [Java基础上](https://github.com/cosen1024/Java-Interview/blob/main/Java%E5%9F%BA%E7%A1%80/Java%E5%9F%BA%E7%A1%80%E4%B8%8A.md)
 * [Java基础下](https://github.com/cosen1024/Java-Interview/blob/main/Java%E5%9F%BA%E7%A1%80/Java%E5%9F%BA%E7%A1%80%E4%B8%8B.md)
 ### 集合
 * [Java集合高频面试题](https://github.com/cosen1024/Java-Interview/blob/main/Java%E9%9B%86%E5%90%88/Java%E9%9B%86%E5%90%88%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98.md)
