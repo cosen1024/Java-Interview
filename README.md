@@ -91,6 +91,8 @@
 ## Dubbo
 * [Dubbo](https://github.com/cosen1024/Java-Interview/blob/main/Dubbo/Dubbo%E9%9D%A2%E8%AF%95%E9%A2%98.md)
 
+## 分布式
+* [分布式](/分布式/面试题.md)
 
 ## 关于我
-[库森的校招经历](http://mp.weixin.qq.com/s?__biz=Mzg4MjUxMTI4NA==&mid=2247483796&idx=1&sn=bdc95819d442ac946b6e49dee6ee36de&chksm=cf54dd4ff82354594280041ce65f639a8ed3361df03da95bed743474a6075dfa973f35acc029&token=2080698617&lang=zh_CN#rd)
+[库森的校招经历](https://mp.weixin.qq.com/s/Q1uNpj_6mGscy5JbMqMY-Q)
