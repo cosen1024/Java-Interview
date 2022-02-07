@@ -113,7 +113,7 @@ Redis列表结构，LPUSH可以在列表头部插入一个内容ID作为关键�
 
 消息队列是大型网站必用中间件，如ActiveMQ、RabbitMQ、Kafka等流行的消息队列中间件，主要用于业务解耦、流量削峰及异步处理实时性低的业务。Redis提供了发布/订阅及阻塞队列功能，能实现一个简单的消息队列系统。另外，这个不能和专业的消息中间件相比。
 
-## 8. Redis的数据类型有哪些？
+## 7. Redis的数据类型有哪些？
 
 有五种常用数据类型：String、Hash、Set、List、SortedSet。以及三种特殊的数据类型：Bitmap、HyperLogLog、Geospatial ，其中HyperLogLog、Bitmap的底层都是 String 数据类型，Geospatial 的底层是 Sorted Set 数据类型。
 
@@ -143,7 +143,7 @@ Redis列表结构，LPUSH可以在列表头部插入一个内容ID作为关键�
 
 # 持久化
 
-## 6. Redis持久化机制？
+## 8. Redis持久化机制？
 
 为了能够重用Redis数据，或者防止系统故障，我们需要将Redis中的数据写入到磁盘空间中，即持久化。
 
