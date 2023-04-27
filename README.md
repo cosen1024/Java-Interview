@@ -101,4 +101,4 @@
 * [分布式](/分布式/面试题.md)
 
 ## 关于我
-[库森的校招经历](https://mp.weixin.qq.com/s/Q1uNpj_6mGscy5JbMqMY-Q)
+[库森的校招经历](https://mp.weixin.qq.com/s?__biz=MzkyMTI3Mjc2MQ==&tempkey=MTIxNV81aG91ZWFjc0E3SWQzUCtmY2ZRQ3I1QXJ0MjZPcndKU3FVdDhqWVI2dGh0bDBCTE9ZTGxWamhUcmFuODZmRFhubXBQMGtCVHd3UUhPTkRHYVh0cTZJaHhSeUx2aTJkUXJocUtSVVpVUU5qaGZoYUdFVFNPOG15X2tGbWFVM1g5bFVQVlo2SGZmbGVtdjVSU2RVZTlhSW9zT1NtcjFHeG1nNzhQbUlRfn4%3D&chksm=c184814ef6f308589c207f852920ac287d1d5eb7b05846483b6e7699448a8bf2578b7a03bc33&token=483239364&lang=zh_CN#rd)
