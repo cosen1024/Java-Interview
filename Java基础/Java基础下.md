@@ -777,11 +777,11 @@ public class Caculate<T extends String> {
 
 ### List<? extends T>和List <? super T>之间有什么区别 ?
 
-这两个List的声明都是限定通配符的例子，List<? extends T>可以接受任何继承自T的类型的List，而List<? super T>可以接受任何T的父类构成的List。例如List<? extends Number>可以接受List<Integer>或List<Float>。
+这两个List的声明都是限定通配符的例子，List<? extends T>可以接受任何继承自T的类型的List，而List<? super T>可以接受任何T的父类构成的List。例如List<? extends Number>可以接受List`<Integer>`或List`<Float>`。
 
 ### 可以把List`<String>`传递给一个接受List`<Object>`参数的方法吗？
 
-不可以。真这样做的话会导致编译错误。因为List<Object>可以存储任何类型的对象包括String, Integer等等，而List<String>却只能用来存储String。　
+不可以。真这样做的话会导致编译错误。因为List`<Object>`可以存储任何类型的对象包括String, Integer等等，而List`<String>`却只能用来存储String。　
 
 ```java
 List<Object> objectList;
